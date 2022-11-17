@@ -1,0 +1,11 @@
+<div class="container">
+<h1>My new bookmark</h1>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.association :movie, as: :select  %>
+  <%= f.input :comment, placeholder:"enter a comment about the movie" %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %><br>
+
+<%= link_to "Back to #{@list.name} List", list_path(@list), class:"text-decoration-none"  %>
+</div>
