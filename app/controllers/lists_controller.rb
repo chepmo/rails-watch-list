@@ -5,6 +5,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @movies = Movie.all
   end
 
   def new
