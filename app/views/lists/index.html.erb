@@ -1,11 +1,22 @@
-<h1>Lists of movies</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dwvsbgwap/image/upload/v1668769915/samples/landscapes/architecture-signs.jpg);">
+  <div class="container">
+    <h1>Lists of movies</h1>
+    <p>List here your favorites movies by genre</p>
+  </div>
+</div>
 
-<%= cl_image_tag("zda7dsyn23is2lzak3sl",
-      width: 400, height: 300, crop: :fill) %>
 
-<% @lists.each do |list| %>
-<ul><li><%= link_to list.name , list_path(list) %></li></ul>
-<% end %>
+
+
+
+<div class="card-product">
+  <img src="https://res.cloudinary.com/dwvsbgwap/image/upload/v1668769908/samples/animals/cat.jpg" />
+    <div><% @lists.each do |list| %></div>
+    <div><ul><li><%= link_to list.name , list_path(list) %></li></ul></div>
+    <% end %>
+</div>
+
+
 
 <div>
   <%= link_to "Add a list", new_list_path %>
