@@ -5,12 +5,17 @@
   <li><%= bookmark.comment %> <%= link_to "Destroy", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
 <%end %>
 
+<% if @list.photo.attached? %>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<ul>
 <% @movies.each do |movie| %>
-  <%= movie.title %> <br><%= movie.overview %> <br><%= movie.rating %>
+  <li><%= movie.title %> <br><%= movie.overview %> <br><%= movie.rating %></li>
   <% end %>
 </ul>
 
 <%= link_to "Create a bookmark", new_list_bookmark_path(@list), class:"text-decoration-none" %><br>
 
-<%= link_to "back to main", lists_path, class:"text-decoration-none" %>
+<%= link_to "Back to lists", lists_path, class:"text-decoration-none" %>
 </div>

@@ -1,4 +1,7 @@
-<h1>Lists</h1>
+<h1>Lists of movies</h1>
+
+<%= cl_image_tag("zda7dsyn23is2lzak3sl",
+      width: 400, height: 300, crop: :fill) %>
 
 <% @lists.each do |list| %>
 <ul><li><%= link_to list.name , list_path(list) %></li></ul>
